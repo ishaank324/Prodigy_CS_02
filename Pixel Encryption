@@ -1,0 +1,20 @@
+import cv2
+#--------------------------------#
+img = cv2.imread(r"C:\Users\Idrees Bhat\Desktop\DIP3E_Original_Images_CH01\two.tif",0)
+imag = img.copy()
+for i in range(1347):
+    for j in range(1525):
+        imag.itemset((i,j),10)
+#-----------------------------------------------------#
+Eimg = cv2.add(img, imag)
+
+#-----------------------------------------------------------#
+# decryption
+Dimg = cv2.subtract(Eimg,imag)
+#--------------------------------------------
+# #------------------------------------------#
+cv2.imshow("image", Dimg)
+# #------------------------------------------#
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
